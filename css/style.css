@@ -1,0 +1,164 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;   
+	background: rgba(247,247,247,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(247,247,247,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(180,180,180,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(247,247,247,1) 0%, rgba(246,246,246,1) 47%, rgba(180,180,180,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+    font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+	text-shadow: 0 2px 1px rgba(240, 240, 240, 1);
+	text-align: center;
+}
+
+#machine {
+	margin: 40px auto;
+	position: relative;
+}
+
+#machine .controls {
+	margin: 20px 0 20px 0;
+}
+
+.bpmRange {
+	float: right;
+}
+
+.bpmTitle {
+	float: left;
+	margin: 7px 8px 0 0;
+}
+
+#bpm {
+	float: left;
+}
+
+#bpmOutput {
+	width: 30px;
+	margin: 7px 0 0 8px;
+	float: left;
+}
+
+.stave {
+	width: 100%;
+	height: 70px;
+	border: 1px solid #666;
+	background: #333;
+}
+
+.staveName {
+	float: right;
+	color: white;
+	margin: 20px 10px 0 0;
+	background: #111;
+	width: 80px;
+	padding: 3px 8px 3px 8px;
+}
+
+.noteContainer {
+	width: 100px;
+	height: 70px;
+	background: none;
+	float: left;
+}
+
+.transporterContainer {
+	width: 910px;
+	height: 50px;
+	border: 1px solid #666;
+	background: #333;
+	position: absolute;
+	bottom: -52px;
+}
+
+.transporter {
+	width: 80px;
+	height: 50px;
+	margin: 10px 0 0 10px;
+	text-align: center;
+	left: 0;
+	z-index: 1;
+	position: absolute;
+}
+
+.transporterOff {
+	width: 100px;
+	height: 60px;
+	margin: 10px 0 0 0;
+	text-align: center;
+	float: left;
+}
+
+.transportLight {
+	border-radius: 50%;
+	background-color: #001100;
+	width: 25px;
+	height: 25px;
+	margin: 0 auto;
+	position: relative;
+	border: 3px solid #222;
+}
+
+.transportLight .hilight {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.5);
+	top: 6px;
+	left: 6px;
+	box-shadow: 3px 4px 7px 8px rgba(0, 120, 0, 0.6);
+}
+
+.transportLightActive {
+	background-color: #00AA00;
+	box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.4);
+	border: 3px solid rgba(0, 120, 0, 1);
+}
+
+.transportLightActive .hilight {
+	background-color: rgba(255,255,255,1);
+	box-shadow: 4px 4px 6px 7px rgba(0, 255, 0, 1);
+}
+
+.note {
+	border-radius: 50%;
+	background-color: #220000;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	cursor: pointer;
+	margin: 20px auto;
+	border: 3px solid #222;
+}
+
+.active {
+	background-color: #AA0000;
+	box-shadow: 0px 0px 10px 5px rgba(255, 0, 0, 0.4);
+	border: 3px solid rgba(120, 0, 0, 1);
+}
+
+.note .hilight {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.5);
+	top: 7px;
+	left: 7px;
+	box-shadow: 3px 4px 7px 9px rgba(180, 0, 0, 0.6);
+}
+
+.active .hilight {
+	background-color: rgba(255,255,255,1);
+	box-shadow: 4px 4px 6px 7px rgba(255, 0, 0, 1);
+}

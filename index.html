@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>backbone.beats</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/controls.css">
+</head>
+<body>
+	<h1>backbone.beats</h1>
+	<div id="machine">
+		<div class="controls">
+			<a href="#" id="togglePlay" class="button">Play</a> 
+			<a href="#" id="clear" class="button">Clear Pattern</a> 
+			<div class="bpmRange">
+				<div class="bpmTitle">BPM:</div><input type="range" id="bpm" min="1" max="420" step="1"><output for="bpm" id="bpmOutput"></output>
+			</div>
+		</div>
+		<div class="transporterContainer">
+			<div class="transporter">
+				<div class="transportLight transportLightActive"><div class="hilight"></div></div>
+			</div>
+		</div>
+	</div>
+	<script id="noteTemplate" type="text/template">
+	    <div id="pos_<%= position %>" class="note">
+	    	<div class="hilight"></div>
+	    </div>
+	</script>
+	<script id="staveTemplate" type="text/template">
+			<div class="staveName"><%= staveName %></div>
+	</script>
+	<script src="js/lib/jquery-1.11.3.min.js"></script>
+	<script src="js/lib/underscore.js"></script>
+	<script src="js/lib/backbone.js"></script>
+	<script src="js/lib/howler.min.js"></script>
+	<script src="js/models/note.js"></script>
+	<script src="js/models/transporter.js"></script>
+    <script src="js/collections/stave.js"></script>
+    <script src="js/views/note.js"></script>
+    <script src="js/views/transporter.js"></script>
+    <script src="js/views/controls.js"></script>
+    <script src="js/views/stave.js"></script>
+    <script src="js/app.js"></script>
+    <script>$(function(){app.boot($('#machine'), 220)});</script>
+</body>
+</html>
