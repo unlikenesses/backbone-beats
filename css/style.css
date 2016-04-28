@@ -169,3 +169,7 @@ h1 {
 	position: absolute;
 	bottom: 10px;
 }
+
+.credits a {
+	color: black;
+}
