@@ -29,15 +29,22 @@ app.boot = function(container, bpm) {
     var snare = new Howl({src:['audio/Hip-Hop-Snare-1.mp3']});
     var hihat = new Howl({src:['audio/Closed-Hi-Hat-1.mp3']});
 
-    var staves = [
-        {name: 'Bass', sample: bass},
-        {name: 'Snare', sample: snare},
-        {name: 'Hihat', sample: hihat}
+    var stavesSrc = [
+        {id: 1, name: 'Bass', sample: bass},
+        {id: 2, name: 'Snare', sample: snare},
+        {id: 3, name: 'Hihat', sample: hihat}
     ];
 
-    for (var i = 0; i < staves.length; i++) {
-        container.append(new app.StaveView(staves[i], notes).el);
+    app.staves = [];
+
+    for (var i = 0; i < stavesSrc.length; i++) {
+        var sv = new app.StaveView(stavesSrc[i], notes);
+        app.staves.push(sv);
+        this.checkLocalStorage(sv);
+        container.append(sv.el);
     }
+
+    app._vent.on('note:click', this.savePattern, this);
 
     // Transporter: 
     app.transporterModel = new app.Transporter();
@@ -54,3 +61,21 @@ app.boot = function(container, bpm) {
     }, app.delay);
 
 }   
+
+app.savePattern = function() {
+    for (var stave of app.staves) {
+        console.log(stave.id, stave.collection.toJSON());
+        localStorage.setItem('bb-pattern-' + stave.id, JSON.stringify(stave.collection.toJSON()));
+    }
+} 
+
+app.checkLocalStorage = function(stave) {
+    // console.log(stave);
+    // console.log('checking for existence of ' + stave.cid);
+    var localStorageRef = localStorage.getItem('bb-pattern-' + stave.id);
+    if (localStorageRef) {
+        // console.log('found');
+        stave.collection.reset(JSON.parse(localStorageRef));
+        // console.log(stave);
+    }
+}

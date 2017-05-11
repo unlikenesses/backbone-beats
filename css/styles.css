@@ -22,6 +22,7 @@ h1 {
 
 #machine {
 	margin: 40px auto;
+	width: 910px;
 	position: relative;
 }
 
@@ -62,6 +63,10 @@ h1 {
 	background: #111;
 	width: 80px;
 	padding: 3px 8px 3px 8px;
+	border-left: 2px solid #222222;
+	border-right: 2px solid #454545;
+	border-top: 2px solid #212121;
+	border-bottom: 2px solid #565656;
 }
 
 .noteContainer {
@@ -108,7 +113,8 @@ h1 {
 	border: 3px solid #222;
 }
 
-.transportLight .hilight {
+.transportLight:after {
+	content: '';
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
@@ -125,7 +131,7 @@ h1 {
 	border: 3px solid rgba(0, 120, 0, 1);
 }
 
-.transportLightActive .hilight {
+.transportLightActive:after {
 	background-color: rgba(255,255,255,1);
 	box-shadow: 4px 4px 6px 7px rgba(0, 255, 0, 1);
 }
@@ -147,7 +153,8 @@ h1 {
 	border: 3px solid rgba(120, 0, 0, 1);
 }
 
-.note .hilight {
+.note:after {
+	content: '';
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
@@ -158,7 +165,7 @@ h1 {
 	box-shadow: 3px 4px 7px 9px rgba(180, 0, 0, 0.6);
 }
 
-.active .hilight {
+.active:after {
 	background-color: rgba(255,255,255,1);
 	box-shadow: 4px 4px 6px 7px rgba(255, 0, 0, 1);
 }
@@ -172,4 +179,119 @@ h1 {
 
 .credits a {
 	color: black;
+}
+
+/* BUTTONS */
+
+.button {
+  background: #777777;
+  box-shadow: 0 5px #454545;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 30px 10px 30px;
+  display: inline-block;
+  outline: none;
+  position: relative;
+}
+
+.button:active {
+  box-shadow: 0 1px #454545;
+  top: 5px;
+}
+
+#togglePlay {
+	width: 75px;
+	text-align: center;
+}
+
+/* RANGE INPUT */
+/* Styled with http://danielstern.ca/range.css/ */
+
+input[type=range] {
+  width: 16em;
+  -webkit-appearance: none;
+  margin: 16.55px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2.9px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #606060;
+  border-radius: 20px;
+  border: 0.1px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0.5px 0.5px 11.2px rgba(0, 0, 0, 0.46), 0px 0px 0.5px rgba(13, 13, 13, 0.46);
+  border: 0px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -16.65px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #636363;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 2.9px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #606060;
+  border-radius: 20px;
+  border: 0.1px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0.5px 0.5px 11.2px rgba(0, 0, 0, 0.46), 0px 0px 0.5px rgba(13, 13, 13, 0.46);
+  border: 0px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 2.9px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #5d5d5d;
+  border: 0.1px solid #010101;
+  border-radius: 40px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #606060;
+  border: 0.1px solid #010101;
+  border-radius: 40px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0.5px 0.5px 11.2px rgba(0, 0, 0, 0.46), 0px 0px 0.5px rgba(13, 13, 13, 0.46);
+  border: 0px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 2.9px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #606060;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #636363;
 }

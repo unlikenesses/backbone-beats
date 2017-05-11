@@ -20,14 +20,15 @@ app.NoteView = Backbone.View.extend({
 	toggleNote: function() {
 
 		var active = this.model.get('active');
-		active = ! active;
+		active = !active;
 		this.model.set('active', active);
 		if (this.model.get('active')) {
 			this.$el.find('.note').addClass('active');
 		} else {
 			this.$el.find('.note').removeClass('active');
 		}
-
+		// console.log(this.model.collection.toJSON());
+		app._vent.trigger('note:click', this);
 	}
 
 });

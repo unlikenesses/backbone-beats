@@ -6,7 +6,7 @@ app.TransporterView = Backbone.View.extend({
 
 	transporterContainer: $('.transporterContainer'),
 
-	offLight: '<div class="transporterOff"><div class="transportLight"><div class="hilight"></div></div></div>',
+	offLight: '<div class="transporterOff"><div class="transportLight"></div></div>',
 
 	initialize: function() {
 

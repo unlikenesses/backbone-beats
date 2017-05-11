@@ -7,6 +7,7 @@ app.StaveView = Backbone.View.extend({
 	template: _.template($('#staveTemplate').html()),
 
 	initialize: function(details, initialNotes) {
+		this.id = details.id;
 		this.sample = details.sample;
 		this.staveName = details.name;
 		this.collection = new app.Stave(initialNotes);
@@ -33,8 +34,7 @@ app.StaveView = Backbone.View.extend({
 	checkNotes: function(tr) {
 		var transporterPos = tr.get('position');
 		var currentNote = this.collection.where({ position: transporterPos });
-		if (currentNote[0].get('active'))
-		{
+		if (currentNote[0].get('active')) {
 			this.sample.play();
 		}
 	},
